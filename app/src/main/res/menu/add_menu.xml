@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Ressource_Add_Button"
+        android:title="Ressource"
+        android:icon="@drawable/ic_baseline_construction_24"/>
+    <item
+        android:id="@+id/Contact_Add_Button"
+        android:title="Contact"
+        android:icon="@drawable/ic_baseline_people_24"/>
+    <item
+        android:id="@+id/Group_Add_Button"
+        android:title="Group"
+        android:icon="@drawable/ic_baseline_groups_24"/>
+    <item
+        android:id="@+id/Project_Add_Button"
+        android:title="Projet"
+        android:icon="@drawable/ic_baseline_create_new_folder_24"/>
+</menu>

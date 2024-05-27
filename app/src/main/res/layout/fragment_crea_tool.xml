@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_page_all">
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer une annonce"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- Nom du groupe -->
+    <EditText
+        android:id="@+id/editTextGroupName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Intitulé"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text" />
+
+    <!-- Description -->
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_below="@id/editTextGroupName"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <!-- Photo de l'objet -->
+    <Button
+        android:id="@+id/buttonChoosePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDescription"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_page_all"
+        android:text="+ Ajouter une image de l'objet"
+        android:textColor="@color/colorPrimary" />
+
+    <!-- Case à cocher pour "Prêt" -->
+    <CheckBox
+        android:id="@+id/checkboxLoan"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:text="Prêt" />
+
+    <!-- Case à cocher pour "Vente" -->
+    <CheckBox
+        android:id="@+id/checkboxSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="330dp"
+        android:text="Vente" />
+
+    <!-- Case à cocher pour "Location" -->
+    <CheckBox
+        android:id="@+id/checkboxRent"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="360dp"
+        android:text="Location" />
+
+    <LinearLayout
+        android:id="@+id/layoutSellPrice"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="326dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextSellPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Prix" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutRentDetails"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="360dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextRentPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Prix" />
+
+        <EditText
+            android:id="@+id/editTextRentTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Temps" />
+    </LinearLayout>
+
+    <!-- Création de l'annonce -->
+    <Button
+        android:id="@+id/buttonCreateGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonChoosePhoto"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="16dp"
+        android:text="Créer l'annonce" />
+
+</RelativeLayout>

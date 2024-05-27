@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_page_all">
+
+    <!-- Barre de recherche -->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/barre_search"
+        android:hint="Rechercher"
+        android:padding="8dp"
+        android:textColorHint="#808080" />
+
+    <!-- Recherches récentes -->
+    <TextView
+        android:id="@+id/textRecentSearches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSearch"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Consultation récentes"
+        android:textColor="#000000"
+        android:textSize="18sp"/>
+
+    <!-- Ajoutez ici la liste des recherches récentes (RecyclerView, ListView, etc.) -->
+
+</RelativeLayout>
