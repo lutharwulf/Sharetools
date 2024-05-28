@@ -24,7 +24,6 @@
             app:title="@string/Dark_theme"
             app:defaultValue="false"/>
 
-
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -121,7 +121,7 @@
 
     <!-- Création de l'annonce -->
     <Button
-        android:id="@+id/buttonCreateGroup"
+        android:id="@+id/buttonCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonChoosePhoto"

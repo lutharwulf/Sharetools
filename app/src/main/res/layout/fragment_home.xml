@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="464dp"
+        android:layout_height="289dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="vertical">
@@ -72,4 +72,39 @@
                 android:text="Projets" />
         </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/secondary_home_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- Premier bouton -->
+            <Button
+                android:id="@+id/Button_Home_Loggout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="Deconnexion" />
+
+            <!-- Deuxième bouton -->
+            <Button
+                android:id="@+id/Button_Home_search"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:text="Recherche" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

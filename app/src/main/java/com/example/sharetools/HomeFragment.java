@@ -9,6 +9,8 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class HomeFragment extends Fragment {
 
@@ -64,6 +66,16 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
+
+
+        Button boutonloggout = view.findViewById(R.id.Button_Home_Loggout);
+        boutonprojects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
+
         return view;
     }
     /*
