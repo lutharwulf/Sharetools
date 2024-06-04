@@ -41,21 +41,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ShareTools" />
+
         <activity
             android:name=".Inscription"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ShareTools" />
         <activity
-            android:name=".testdb"
+            android:name=".login"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ShareTools" />
     </application>
-
 </manifest>

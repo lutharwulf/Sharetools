@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,43 +35,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener(){
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user!=null){
-                    //Contenu affichage
-                    binding = ActivityMainBinding.inflate(getLayoutInflater());
-                    setContentView(binding.getRoot());
+        FirebaseUser user = mAuth.getCurrentUser();
 
+
+        if (user!=null){
+            //Contenu affichage
+
+            replaceFragment(new HomeFragment());
+            binding.bottomNavigationView.setBackground(null);
+            //On bind les boutons du menu de l'appli à un fragment.
+            binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+                //On compart le résultat obtenu lors de la selection du bouton pour retourner le bon fragment
+                //Deux options sont possible des if / else_if et switch case. J'ai du utiliser les if car le switch nécessite des constantes pour effectuer la comparaison.
+                if(item.getItemId() == R.id.homebotton_bottommenu){
                     replaceFragment(new HomeFragment());
-                    binding.bottomNavigationView.setBackground(null);
-                    //On bind les boutons du menu de l'appli à un fragment.
-                    binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-                        //On compart le résultat obtenu lors de la selection du bouton pour retourner le bon fragment
-                        //Deux options sont possible des if / else_if et switch case. J'ai du utiliser les if car le switch nécessite des constantes pour effectuer la comparaison.
-                        if(item.getItemId() == R.id.homebotton_bottommenu){
-                            replaceFragment(new HomeFragment());
-                        }else if (item.getItemId() == R.id.searchbotton_bottommenu) {
-                            replaceFragment(new SearchFragment());
-                        }else if (item.getItemId() == R.id.addbotton_bottommenu) {
-                            replaceFragment(new AddTools());
-                            //startActivity(new Intent(MainActivity.this, SelectPictureFromGallery.class));
-                        }else if (item.getItemId() == R.id.groupsbotton_bottommenu) {
-                            replaceFragment(new GroupsFragment());
-                        }else if (item.getItemId() == R.id.chatbotton_bottommenu) {
-                            replaceFragment(new SettingsFragment());
-                        }
+                }else if (item.getItemId() == R.id.searchbotton_bottommenu) {
+                    replaceFragment(new SearchFragment());
+                }else if (item.getItemId() == R.id.addbotton_bottommenu) {
+                    replaceFragment(new AddTools());
+                    //startActivity(new Intent(MainActivity.this, SelectPictureFromGallery.class));
+                }else if (item.getItemId() == R.id.groupsbotton_bottommenu) {
+                    replaceFragment(new GroupsFragment());
+                }else if (item.getItemId() == R.id.chatbotton_bottommenu) {
+                    replaceFragment(new SettingsFragment());
+                }
 
-                        return true;
-                    });
-                }
-                else{
-                    startActivity(new Intent(MainActivity.this, login.class));
-                }
-            }
-        };
+                return true;
+            });
+        }
+        else{
+            //startActivity(new Intent(MainActivity.this, login.class));
+            startActivity(new Intent(MainActivity.this, login.class));
+        }
+
 
         //Gestion du mode Light/Dark
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

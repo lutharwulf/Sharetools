@@ -57,8 +57,6 @@
         android:background="?android:attr/selectableItemBackground"
         android:onClick="RedirectRegister"/>
 
-
-
 </LinearLayout>
 
 

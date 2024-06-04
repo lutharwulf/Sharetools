@@ -2,6 +2,7 @@ package com.example.sharetools;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,13 +41,13 @@ public class Inscription extends AppCompatActivity {
                 String pass = passwordRegister.getText().toString().trim();
 
                 //On vérifie que le champ email soit non-vide
-                if (user.isEmpty()){
+                if (user.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(user).matches()){
                     emailRegister.setError("Email cannot be empty");
                 }
                 //On test si le champ mot de passe est vide, sinon on enregistre l'utilisateur
                 if (pass.isEmpty()){
                     passwordRegister.setError("Password cannot be empty");
-                } else{
+                }else{
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

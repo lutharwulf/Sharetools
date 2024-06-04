@@ -69,13 +69,13 @@ public class HomeFragment extends Fragment {
 
 
         Button boutonloggout = view.findViewById(R.id.Button_Home_Loggout);
-        boutonprojects.setOnClickListener(new View.OnClickListener() {
+        boutonloggout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
             }
-        });
 
+        });
         return view;
     }
     /*
