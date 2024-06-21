@@ -95,7 +95,7 @@ public class DatabaseManager {
 
 
 
-    public static void addDatatoFirebase(String name, String descr) {
+    public static void addDatatoFirebase(String user_uid,String name, String descr) {
         // creating a variable for our Firebase Database.
         FirebaseDatabase database;
 
@@ -121,8 +121,8 @@ public class DatabaseManager {
                 // our object class to our database reference.
                 // data base reference will sends data to firebase.
 
-                databaseReference.child("users").child("user_test").child("nom_outils").setValue(name);
-                databaseReference.child("users").child("user_test").child("descr_outils").setValue(descr);
+                databaseReference.child("users").child(user_uid).child("nom_outils").setValue(name);
+                databaseReference.child("users").child(user_uid).child("descr_outils").setValue(descr);
 
                 //databaseReference.child("users").child("user_test2").setValue(outils);
 

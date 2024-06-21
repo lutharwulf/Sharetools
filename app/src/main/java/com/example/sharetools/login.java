@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import com.example.sharetools.validation.LoginValidator;
 
 public class login extends AppCompatActivity {
     private FirebaseAuth auth;
@@ -54,7 +55,7 @@ public class login extends AppCompatActivity {
                     String pass = passwordLogin.getText().toString();
 
                     //On vérifie que le champ email soit non-vide et qu'il sagit d'un email correct
-                    if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    if (LoginValidator.isValidPassword(pass)) {
                         //On vérifie que le champ mot de passe ne soit pas vide
                         if (!pass.isEmpty()) {
                             //On initialise la connexion firebase
